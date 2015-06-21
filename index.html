@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products">
+  <meta name="author" content="Joseph Chris Adrian">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products</h1>
+    <h2>Reproducible Pitch</h2>
+    <p>Joseph Chris Adrian<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Basic Exploratory Analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This presentation is being created as part of the peer assessment for the coursera developing data products class. The assignment is geared toward ensuring the following concepts were well understood by the students:</p>
+
+<ol>
+<li>shiny to build data product application</li>
+<li>R-Presentation or slidify to create data product related presentations</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To display the understanding of using shiny to build an application, a simple application to explore the relationship of mpg(Miles Per Gallon) and other variables in a base R dataset has been deployed at: <a href="https://jochrisadrian.shinyapps.io/courseradevmpg">https://jochrisadrian.shinyapps.io/courseradevmpg</a></p>
+
+<p>The application allows the user to select the variable for comparison with mpg. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This datasets is one of the base datasets in R. Details of the dataset can be found here
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html">https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html</a></p>
+
+<p>mpg Miles/(US) gallon is the variable that can be seen across the given categorical variables.</p>
+
+<p>The categorical variables chosen are:</p>
+
+<p>1) cyl Number of cylinders 2) am Transmission (0 = automatic, 1 = manual) 3) gear Number of forward gears 4) carb Number of carburetors </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The Code</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application is built in such a way that mpg is aggregated according to the selected variable. </p>
+
+<p>Below is an example of aggregation:</p>
+
+<pre><code class="r">input = &quot;cyl&quot;
+aggregate(mpg ~ mtcars[names(mtcars)==input][,1],data = mtcars, mean)
+</code></pre>
+
+<pre><code>##   mtcars[names(mtcars) == input][, 1]      mpg
+## 1                                   4 26.66364
+## 2                                   6 19.74286
+## 3                                   8 15.10000
+</code></pre>
+
+<p>The source code is found in the following link:
+<a href="https://github.com/JosephAdrian/courseradevmpg">https://github.com/JosephAdrian/courseradevmpg</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Basic Exploratory Analysis'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The Application'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Data'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Code'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
